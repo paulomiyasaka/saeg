@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 //CONEXÃO COM BANCO DE DADOS
 define('HOST', "localhost");

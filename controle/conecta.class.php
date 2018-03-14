@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 	include_once 'constantes.php';
 	include_once 'auto_load.class.php';
 	new auto_load();

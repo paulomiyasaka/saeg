@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 include_once 'auto_load.class.php';
 new auto_load();
@@ -32,7 +32,7 @@ class acao extends conecta{
 	}
 
 	
-	//consultar unidades para os plant�es
+	//consultar unidades para os plantões
 	protected function consultarUnidadesPlantao(){
 		
 		$sql = "SELECT * FROM unidades";

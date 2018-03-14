@@ -1,4 +1,4 @@
-<?php
+Ôªø<?php
 include_once 'auto_load.class.php';
 new auto_load();
 header("Content-Type: text/html; charset=UTF-8",true);
@@ -66,7 +66,7 @@ class plantao extends acao{
 		return $this->tipo_trabalho;
 	}
 	
-	//listar unidades disponÌveis para cadastrar plant„o
+	//listar unidades dispon√≠veis para cadastrar plant√£o
 	public function listarUnidadesPlantao(){
 		
 		$unidades = acao::consultarUnidadesPlantao();		
@@ -78,11 +78,11 @@ class plantao extends acao{
 		}
 			
 	
-	}//listar unidades para o plant„o
+	}//listar unidades para o plant√£o
 	
 	
 	
-	//cadastrar plant„o
+	//cadastrar plant√£o
 	public function cadastrarPlantao(){
 		
 		$funcoes = new funcoes();
@@ -116,7 +116,26 @@ class plantao extends acao{
 			return false;
 		}
 	
-	}//cadastrar plant„o
+	}//cadastrar plant√£o
+
+
+	//gerar hor√°rios para o plant√£o
+	public function gerarHorario(){
+
+		echo "<option value='NULL' selected>Selecione um hor√°rio</option>";
+
+		for($i = 0; $i <= 23; $i++){
+			if($i < 10){
+				echo "<option value='$i'>0".$i.":00</option>";
+			}else{
+				echo "<option value='$i'>".$i.":00</option>";
+			}
+			
+		}
+
+	
+
+	}//gerar horario
 	
 	
 	

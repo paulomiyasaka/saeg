@@ -1,11 +1,11 @@
-<?php
+﻿<?php
 include_once 'auto_load.class.php';
 new auto_load();
 header("Content-Type: text/html; charset=UTF-8",true);
 
 class unidades extends acao{
 
-	protected $nome, $trabalho, $endereco, $gerente, $tel_gerente, $tel_centro;
+	protected $nome, $trabalho, $endereco, $gerente, $matricula, $tel_gerente, $tel_centro;
 	
 	public function setNome($value){
 		$this->nome = $value;
@@ -33,6 +33,13 @@ class unidades extends acao{
 	}
 	public function getGerente(){
 		return $this->gerente;
+	}
+
+	public function setMatricula($value){
+		$this->matricula = $value;
+	}
+	public function getMatricula(){
+		return $this->matricula;
 	}
 	
 	public function setTelGerente($value){
@@ -81,12 +88,13 @@ class unidades extends acao{
 		$trabalho = $this->getTrabalho();
 		$endereco = $this->getEndereco();
 		$gerente = $this->getGerente();
+		$matricula = $this->getMatricula();
 		$tel_gerente = $this->getTelGerente();
 		$tel_centro = $this->getTelCentro();
 		
 		
-		$sql = "INSERT INTO unidades (nome, trabalho, endereco, gerente, tel_gerente, tel_centro) VALUES (:nome, :trabalho, :endereco, :gerente, :tel_gerente, :tel_centro)";
-		$dados = array(':nome' => $nome, ':trabalho' => $trabalho, ':endereco' => $endereco, ':gerente' => $gerente, ':tel_gerente' => $tel_gerente, ':tel_centro' => $tel_centro);
+		$sql = "INSERT INTO unidades (nome, trabalho, endereco, gerente, matricula, tel_gerente, tel_centro) VALUES (:nome, :trabalho, :endereco, :gerente, :matricula, :tel_gerente, :tel_centro)";
+		$dados = array(':nome' => $nome, ':trabalho' => $trabalho, ':endereco' => $endereco, ':gerente' => $gerente, ':matricula' => $matricula, ':tel_gerente' => $tel_gerente, ':tel_centro' => $tel_centro);
 		$cadastrar = acao::cadastrar($sql, $dados);
 		if($cadastrar){
 			return $cadastrar;
