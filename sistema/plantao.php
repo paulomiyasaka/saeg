@@ -1,10 +1,10 @@
-<?php
+ï»¿<?php
 include_once '../controle/auto_load.class.php';
 new auto_load();
 header("Content-Type: text/html; charset=UTF-8",true);
 
 $acao = "";
-//verifica passagem de acão
+//verifica passagem de acÃ£o
 if(isset($_GET['acao'])){
 
 	$acao = $_GET['acao'];
@@ -49,7 +49,7 @@ if(isset($_GET['acao'])){
 	
 	
 	
-//se não houver parametro acao apresenta erro
+//se nÃ£o houver parametro acao apresenta erro
 }else{
 
 	return false;

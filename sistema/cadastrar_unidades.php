@@ -1,29 +1,13 @@
-<!doctype html>
-<html lang="pt-br">
-  <head>
-    <title>Cadastrar Unidades</title>
-    <!-- Required meta tags -->
-     <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-  
-  
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/style.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
-	<script src="js/script.js"></script>
-  
-  </head>
+Ôªø<?php
+$titulo = "Cadastrar Unidades";
+include_once '../head.php';
+?>
   <body>
   
-	<!-- CabeÁalho -->
+	<!-- Cabe√ßalho -->
 			<nav class="navbar navbar-dark bg-dark">			
 
-				<h2 class="text-white">SAEG - Sistema de Apoio ‡s Atividades Extras -  GEOPE SE/BSB</h2>
+				<h2 class="text-white">SAEG - Sistema de Apoio √†s Atividades Extras -  GEOPE SE/BSB</h2>
 			  
 			</nav>
 			
@@ -43,17 +27,21 @@
 		  <select class="custom-select" id="tipo_trabalho" name="tipo_trabalho">
 			<option value="0" selected>Escolha Tipo do Trabalho</option>
 			<option value="Tratamento">Tratamento</option>
-			<option value="DistribuiÁ„o">DistribuiÁ„o</option>
+			<option value="Distribui√ß√£o">Distribui√ß√£o</option>
 		  </select>
 		</div>
 		  
 		  <div class="form-group">
-			<label for="endereco">EndereÁo da Unidade</label>
-			<input type="text" name="endereco" class="form-control" id="endereco" placeholder="EndereÁo da Unidade">
+			<label for="endereco">Endere√ßo da Unidade</label>
+			<input type="text" name="endereco" class="form-control" id="endereco" placeholder="Endere√ßo da Unidade">
 		  </div>
 		  <div class="form-group">
 			<label for="gerente">Gerente</label>
 			<input type="text" name="gerente" class="form-control" id="gerente" placeholder="Gerente">
+		  </div>
+		  <div class="form-group">
+			<label for="matricula">Matr√≠cula do Gerente:</label>
+			<input type="text" name="matricula" class="form-control" id="matricula" placeholder="Matr√≠cula do Gerente">
 		  </div>
 		  <div class="form-group">
 			<label for="tel_gerente">Telefone do Gerente</label>

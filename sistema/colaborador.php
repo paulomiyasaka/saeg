@@ -9,10 +9,11 @@ if(isset($_GET['acao'])){
 
 	$acao = $_GET['acao'];
 	$nome = "";
-	$tipo_trabalho = "";
-	$endereco = "";
-	$tel_gerente = "";
-	$tel_centro = "";
+	$matricula = "";
+	$lotacao = "";
+	$telefone = "";
+	$senha = "";
+	$senha2 = "";
 	
 	
 	
@@ -22,26 +23,23 @@ if(isset($_GET['acao'])){
 		if(isset($_GET['nome'])){
 			$unidades->setNome($_GET['nome']);
 		}		
-		if(isset($_GET['tipo_trabalho'])){
-			$unidades->setTrabalho($_GET['tipo_trabalho']);
-		}
-		if(isset($_GET['endereco'])){
-			$unidades->setEndereco($_GET['endereco']);
-		}
-		if(isset($_GET['gerente'])){
-			$unidades->setGerente($_GET['gerente']);
-		}
 		if(isset($_GET['matricula'])){
 			$unidades->setMatricula($_GET['matricula']);
 		}
-		if(isset($_GET['tel_gerente'])){
-			$unidades->setTelGerente($_GET['tel_gerente']);
+		if(isset($_GET['lotacao'])){
+			$unidades->setLotacao($_GET['lotacao']);
 		}
-		if(isset($_GET['tel_centro'])){
-			$unidades->setTelCentro($_GET['tel_centro']);
+		if(isset($_GET['telefone'])){
+			$unidades->setTelefone($_GET['telefone']);
+		}
+		if(isset($_GET['senha'])){
+			$unidades->setSenha($_GET['senha']);
+		}
+		if(isset($_GET['senha2'])){
+			$unidades->setSenha2($_GET['senha2']);
 		}
 	
-		$cadastrar = $unidades->cadastrarUnidades();
+		$cadastrar = $unidades->cadastrarColaborador();
 		if($cadastrar){
 			echo "CADASTRADO COM SUCESSO";
 		}else{

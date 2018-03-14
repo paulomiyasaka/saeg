@@ -1,4 +1,4 @@
-<?php
+ï»¿<?php
 include_once '../controle/auto_load.class.php';
 new auto_load();
 $funcoes = new funcoes();
@@ -9,7 +9,7 @@ header("Content-Type: text/html; charset=UTF-8",true);
 <!doctype html>
 <html lang="pt-br">
   <head>
-    <title>Unidades Disponíveis</title>
+    <title>Unidades DisponÃ­veis</title>
     <!-- Required meta tags -->
 	 <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -27,10 +27,10 @@ header("Content-Type: text/html; charset=UTF-8",true);
   </head>
   <body>
 <div class="container-fluid">
-	<!-- Cabeçalho -->
+	<!-- CabeÃ§alho -->
 	<nav class="navbar navbar-dark bg-dark">			
 
-		<h2 class="text-white">SAEG - Sistema de Apoio às Atividades Extras -  GEOPE SE/BSB</h2>
+		<h2 class="text-white">SAEG - Sistema de Apoio Ã s Atividades Extras -  GEOPE SE/BSB</h2>
 	  
 	</nav>
   
@@ -40,7 +40,7 @@ header("Content-Type: text/html; charset=UTF-8",true);
       <th scope="col">Cadastrar</th>
       <th scope="col">Unidade</th>
       <th scope="col">Trabalho</th>
-      <th scope="col">Endereço</th>
+      <th scope="col">EndereÃ§o</th>
 	  <th scope="col">Gerente</th>
 	  <th scope="col">Tel Gerente</th>
 	  <th scope="col">Tel Centro</th>
