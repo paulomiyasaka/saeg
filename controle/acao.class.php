@@ -50,6 +50,8 @@ class acao extends conecta{
 	}
 
 
+	
+
 
 
 

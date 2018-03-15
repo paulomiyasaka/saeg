@@ -1,7 +1,6 @@
 ﻿<?php
 include_once 'auto_load.class.php';
 new auto_load();
-header("Content-Type: text/html; charset=UTF-8",true);
 
 class unidades extends acao{
 
@@ -103,8 +102,6 @@ class unidades extends acao{
 		}
 	
 	}//cadastrar unidades
-	
-	
 	
 	
 	

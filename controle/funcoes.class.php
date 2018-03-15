@@ -65,6 +65,47 @@ class funcoes extends conecta{
 	
 	}
 
+	//monta a data SQL para apresentar na página
+	public function montarDataPlantao($turno_inicio, $turno_final){
+
+		$data = "";
+
+		$dia_semana_inicio = date("w", strtotime($turno_inicio));
+		$data_inicio = date("d/m/Y", strtotime($turno_inicio));
+		$hora_inicio = date("H:i:s", strtotime($turno_inicio));
+		$dia_semana_final = date("w", strtotime($turno_final));
+		$data_final = date("d/m/Y", strtotime($turno_final));
+		$hora_final = date("H:i:s", strtotime($turno_final));
+
+		$dia_semana_inicio = $this->diaSemana($dia_semana_inicio);
+		$dia_semana_final = $this->diaSemana($dia_semana_final);
+
+		if($data_inicio != $data_final){
+			$data = $dia_semana_inicio . ", " . $data_inicio . "<br>" .$hora_inicio . " as " . $hora_final;
+		}else{
+			$data = $dia_semana_inicio . ", " . $data_inicio . " as " .$hora_inicio . "<br>até<br>". $dia_semana_final . ", " . $data_final ." as ". $hora_final;
+		}
+
+			return $data;
+
+	}
+
+
+	//pegar dia da semana
+	public function diaSemana($dia_semana){
+		$dia = array(0 => 'Domingo',
+				1 => 'Segunda-feira',
+				2 => 'Terça-feira',
+				3 => 'Quarta-feira',
+				4 => 'Quinta-feira',
+				5 => 'Sexta-feira',
+				6 => 'Sábado'
+			);
+
+		return $dia[$dia_semana];
+
+	}
+
 
 
 }//class funções

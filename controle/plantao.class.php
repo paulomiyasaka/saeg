@@ -5,7 +5,7 @@ header("Content-Type: text/html; charset=UTF-8",true);
 
 class plantao extends acao{
 
-	protected $id_unidade, $nome_unidade, $data_inicio, $data_final, $hora_inicio, $hora_final, $vagas, $tipo_trabalho;
+	protected $id_unidade, $nome_unidade, $data_inicio, $data_final, $hora_inicio, $hora_final, $vagas, $tipo_trabalho, $motorista;
 	
 	public function setIdUnidade($valor){
 		$this->id_unidade = $valor;		
@@ -56,6 +56,14 @@ class plantao extends acao{
 	
 	public function getVagas(){
 		return $this->vagas;
+	}
+
+	public function setMotorista($valor){
+		$this->motorista = $valor;
+	}
+	
+	public function getMotorista(){
+		return $this->motorista;
 	}
 	
 	public function setTipoTrabalho($valor){
@@ -136,7 +144,88 @@ class plantao extends acao{
 	
 
 	}//gerar horario
-	
+
+
+	//listar plantões disponíveis
+	public function listarPlantao(){
+
+		
+		$sql = "SELECT p.*, u.* FROM plantao as p INNER JOIN unidades as u ON p.id_unidade = u.id_unidade AND p.turno_final > now()";
+		$dados = array();
+		$query = conecta::executarSQL($sql, $dados);
+		$resultado = $query->fetchAll(PDO::FETCH_OBJ);
+		$quant = $query->rowCount();
+
+		if($quant > 0){				
+			$i = 0;
+			//while($i < $quant){
+
+			foreach ($resultado as $row) {			
+
+			echo "<div class=\"col-4 text-center\" style=\"margin-top: 15px; margin-bottom: 15px;\">
+			<div class=\"card\">
+			  <div class=\"card-body border border-dark\">
+			  	<div class=\"alert alert-secondary\" role=\"alert\">
+			    <h3 class=\"card-title\">".$row->nome." - ".$row->trabalho."</h3>
+			    <h4 class=\"card-subtitle mb-2 text-muted\">".$row->endereco."</h4>
+				</div>
+			    <hr>";
+
+			    $funcoes = new funcoes();
+			    $data = $funcoes->montarDataPlantao($row->turno_inicio, $row->turno_final);
+			    $id_plantao = $row->id_plantao;
+
+			echo "<h4 class=\"card-text text-center\">".$data."</h4>
+			<hr>
+			    <h5 class=\"card-text text-left\">Gerente: ".$row->gerente."</h5>
+			    <h5 class=\"card-text text-left\">Telefone: ".$row->tel_gerente."</h5>
+			    <h5 class=\"card-text text-left\">Telefone: ".$row->tel_centro."</h5>
+			    <hr>
+			    <a href=\"#\" class=\"btn btn-primary card-link text-center\">Inscrever-se</a>
+			    <button type=\"button\" class=\"btn btn-secundary card-link\">Vagas Disponíveis: <span class=\"badge badge-light\">". $this->contarVagas($id_plantao) ."</span></button>
+			  </div>
+			</div>
+			</div>";
+
+			$i++;
+			
+			//}
+
+			}
+
+
+		}else{
+			echo "<div class=\"col-10 align-self-center\"><div class=\"pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center\"><h1 class=\"display-4\">Não Há Plantões Ativos</h1></div></div>";
+
+		}
+	}//listar plantao
+
+
+
+	//contar vagas disponíveis
+	public function contarVagas($id_plantao){
+		/*
+		$sql = "SELECT p.*, u.* FROM plantao as p INNER JOIN unidades as u ON p.id_unidade = u.id_unidade AND p.turno_final > now()";
+		$dados = array();
+		$query = conecta::executarSQL($sql, $dados);
+		$resultado = $query->fetchAll(PDO::FETCH_OBJ);
+		$quant = $query->rowCount();
+		*/
+		echo "FALTA MONTAR TABELA DE CADASTRADOS PARA CONTAR VAGAS DISPONÍVEIS.";
+
+	}
+
+	//botao cadastrar - deve ser apresentado somente para os administradores do sistema
+	public function botaoCadastrarPlantao(){
+
+		echo "<div class=\"row justify-content-md-center\">
+				<div class=\"col-10 text-center\">
+					<h4>Clique no botão abaixo para cadastrar um novo plantão.</h4><br>
+					<button type=\"button\" class=\"btn btn-outline-warning border-warning\" data-toggle=\"modal\" data-target=\"#modalPlantao\">Cadastrar Plantão</button>
+
+				</div>
+			</div>";
+	}
 	
 	
 	
