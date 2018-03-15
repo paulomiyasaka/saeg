@@ -1,66 +1,123 @@
 ﻿<?php
-include_once '../controle/auto_load.class.php';
-new auto_load();
-$funcoes = new funcoes();
-$funcoes->charset();
-header("Content-Type: text/html; charset=UTF-8",true);
+$titulo = "Listar Plantões";
+include_once '../head.php';
 ?>
 
-<!doctype html>
-<html lang="pt-br">
-  <head>
-    <title>Unidades Disponíveis</title>
-    <!-- Required meta tags -->
-	 <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-  
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../css/style.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
-	<script src="../js/script.js"></script>
-  
-  </head>
   <body>
-<div class="container-fluid">
-	<!-- Cabeçalho -->
-	<nav class="navbar navbar-dark bg-dark">			
-
-		<h2 class="text-white">SAEG - Sistema de Apoio às Atividades Extras -  GEOPE SE/BSB</h2>
-	  
-	</nav>
   
-  <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Cadastrar</th>
-      <th scope="col">Unidade</th>
-      <th scope="col">Trabalho</th>
-      <th scope="col">Endereço</th>
-	  <th scope="col">Gerente</th>
-	  <th scope="col">Tel Gerente</th>
-	  <th scope="col">Tel Centro</th>
-    </tr>
-  </thead>
   
-   <tbody>
+      
+      <nav class="navbar navbar-dark bg-dark">			
 
+				<h2 class="text-white">SAEG - Sistema de Apoio às Atividades Extras -  GEOPE SE/BSB</h2>
+			  
+			</nav>
+    
+    
+  
+  
 
-	<?php 
-	$unid = new unidades();
-	$listar = $unid->consultarUnidades(); 
+	<div class="container">
+
+	<div class="row justify-content-md-center">
+	<div class="col-10 align-self-center">
+	<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">Plantões Ativos</h1>      
+    </div>
+	</div>
+	</div>
 	
-	?>
+	<div class="row justify-content-md-center">
+	<div class="col-8 align-self-center">
+	<p class="lead text-center"><b>Benefícios</b> - Para trabalhos aos sábados ou em trabalho no CTE durante a madrugada, desde que seja jornada dupla, o empregado terá direito a <b>uma folga</b>. Para trabalho aos domingos o empregado terá direito a <b>duas folgas.</b></p>
+	</div>
+	</div>
+	<hr>
+	<br>
+	
+	<div class="row justify-content-md-center">
 
-
-	</tbody>
-	</table>
+	<div class="col-4 text-center" style="margin-top: 15px; margin-bottom: 15px;">
+	<div class="card">
+	  <div class="card-body border border-dark">
+	  	<div class="alert alert-secondary" role="alert">
+	    <h3 class="card-title">CTE - Tratamento</h3>
+	    <h4 class="card-subtitle mb-2 text-muted">Endereço: SIA Trecho X Lote 1000</h4>
+		</div>
+	    <hr>
+	    <h4 class="card-text text-left">Data: 14/03/2018 das 13:00 as 21:00</h4>
+	    <h4 class="card-text text-left">Gerente: Ana Lúcia</h4>
+	    <h4 class="card-text text-left">Telefone: 61 99999-9999</h4>
+	    <h4 class="card-text text-left">Telefone: 61 3333-3333</h4>
+	    <hr>
+	    <a href="#" class="btn btn-primary card-link text-center">Inscrever-se</a>
+	    <button type="button" class="btn btn-secundary card-link">Vagas Disponíveis: <span class="badge badge-light"> 4 / 20</span></button>
+	  </div>
+	</div>
 	</div>
 
+	<div class="col-4 text-center"  style="margin-top: 15px; margin-bottom: 15px;">
+	<div class="card">
+	  <div class="card-body border border-dark">
+	  	<div class="alert alert-secondary" role="alert">
+	    <h3 class="card-title">CTE - Tratamento</h3>
+	    <h4 class="card-subtitle mb-2 text-muted">Endereço: SIA Trecho X Lote 1000</h4>
+		</div>
+	    <hr>
+	    <h4 class="card-text text-left">Data: 14/03/2018 das 13:00 as 21:00</h4>
+	    <h4 class="card-text text-left">Gerente: Ana Lúcia</h4>
+	    <h4 class="card-text text-left">Telefone: 61 99999-9999</h4>
+	    <h4 class="card-text text-left">Telefone: 61 3333-3333</h4>
+	    <hr>
+	    <a href="#" class="btn btn-primary card-link text-center">Inscrever-se</a>
+	    <button type="button" class="btn btn-secundary card-link">Vagas Disponíveis: <span class="badge badge-light"> 4 / 20</span></button>
+	  </div>
+	</div>
+	</div>
 
+	<div class="col-4 text-center" style="margin-top: 15px; margin-bottom: 15px;">
+	<div class="card">
+	  <div class="card-body border border-dark">
+	  	<div class="alert alert-secondary" role="alert">
+	    <h3 class="card-title">CTE - Tratamento</h3>
+	    <h4 class="card-subtitle mb-2 text-muted">Endereço: SIA Trecho X Lote 1000</h4>
+		</div>
+	    <hr>
+	    <h4 class="card-text text-left">Data: 14/03/2018 das 13:00 as 21:00</h4>
+	    <h4 class="card-text text-left">Gerente: Ana Lúcia</h4>
+	    <h4 class="card-text text-left">Telefone: 61 99999-9999</h4>
+	    <h4 class="card-text text-left">Telefone: 61 3333-3333</h4>
+	    <hr>
+	    <a href="#" class="btn btn-primary card-link text-center">Inscrever-se</a>
+	    <button type="button" class="btn btn-secundary card-link">Vagas Disponíveis: <span class="badge badge-light"> 4 / 20</span></button>
+	  </div>
+	</div>
+	</div>
+
+	<div class="col-4 text-center" style="margin-top: 15px; margin-bottom: 15px;">
+	<div class="card">
+	  <div class="card-body border border-dark">
+	  	<div class="alert alert-secondary" role="alert">
+	    <h3 class="card-title">CTE - Tratamento</h3>
+	    <h4 class="card-subtitle mb-2 text-muted">Endereço: SIA Trecho X Lote 1000</h4>
+		</div>
+	    <hr>
+	    <h4 class="card-text text-left">Data: 14/03/2018 das 13:00 as 21:00</h4>
+	    <h4 class="card-text text-left">Gerente: Ana Lúcia</h4>
+	    <h4 class="card-text text-left">Telefone: 61 99999-9999</h4>
+	    <h4 class="card-text text-left">Telefone: 61 3333-3333</h4>
+	    <hr>
+	    <a href="#" class="btn btn-primary card-link text-center">Inscrever-se</a>
+	    <button type="button" class="btn btn-secundary card-link">Vagas Disponíveis: <span class="badge badge-light"> 4 / 20</span></button>
+	  </div>
+	</div>
+	</div>
+
+	</div>
+		
+		
+	
+	</div>
+	
 </body>
 </html>

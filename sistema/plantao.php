@@ -37,7 +37,12 @@ if(isset($_GET['acao'])){
 		if(isset($_GET['vagas'])){
 			$plantao->setVagas($_GET['vagas']);
 		}
-		
+		if(isset($_GET['motorista'])){
+			$plantao->setMotorista($_GET['motorista']);
+		}else{
+			$plantao->setMotorista("0");
+		}
+		$m = $plantao->getMotorista();
 		$cadastrar = $plantao->cadastrarPlantao();
 		if($cadastrar){
 			echo "CADASTRADO COM SUCESSO";

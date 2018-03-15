@@ -11,7 +11,7 @@ include_once '../head.php';
 			  
 			</nav>
 			
-			
+	<div class="modal-body">		
 	<div class="container-fluid">
 	
 		<div class="row">
@@ -72,13 +72,20 @@ include_once '../head.php';
 		  </div>
 		  
 		  <div class="row">
-		  <div class="col">
+		  <div class="col-3">
 		  <div class="form-group">
-			<label for="vagas">Quantidade de Vagas</label>
+			<label for="vagas">Quantidade de Vagas Total</label>
 			<input type="text" name="vagas" class="form-control" id="vagas" placeholder="Quantidade de Vagas">
+		  </div> 
+		</div>
+		  <div class="col-6">
+		  	<div class="form-group">
+		  	<input class="form-check-input" type="checkbox" value="1" id="motorista" name="motorista">
+			  <label class="form-check-label" for="motorista"> Este plantão NECESSISTARÁ de motoristas.</label>		  		 		
+		  	</div>
+		 </div>
 		  </div>
-		  </div>
-		  </div>
+
 		  <div class="row">
 		  <div class="col">
 		  <input type="hidden" name="acao" value="cadastrar">
@@ -92,7 +99,7 @@ include_once '../head.php';
 		</form>
 		
 	</div>
-			
+		</div>	
 			
 			
 			
