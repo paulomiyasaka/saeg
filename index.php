@@ -29,13 +29,17 @@
       <label for="matricula" class="sr-only">Matrícula</label>
       <input type="text" id="matricula" class="form-control" placeholder="Informe a sua Matrícula" required autofocus>
       <hr>
+      <!--
       <label for="senha" class="sr-only">Senha</label>
       <input type="password" id="senha" class="form-control" placeholder="Senha" required>
+      -->
       <hr>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">ENTRAR</button>
+      <button id="btn_entrar" class="btn btn-lg btn-primary btn-block" type="submit">ENTRAR</button>
       <br>
+      <!--
       <hr>
       <a href="sistema/cadastrar_colaborador.php" class="h4 alert alert-secondary">Clique aqui para cadastrar-se.</a>
+      -->
       <hr>
       <p class="mt-5 mb-3 text-muted">GEOPE SE/BSB</p>
     </form>
